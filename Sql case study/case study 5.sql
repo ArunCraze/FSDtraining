@@ -57,3 +57,6 @@ SELECT * FROM Orders;
 
 -- View OrderItems
 SELECT * FROM OrderItems;
+
+
+drop database eventdb;
