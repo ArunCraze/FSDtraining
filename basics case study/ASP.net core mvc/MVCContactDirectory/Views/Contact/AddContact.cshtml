@@ -1,0 +1,58 @@
+﻿@model MVCContactDirectory.Model.ContactInfo
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Add Contact</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3>Add New Contact</h3>
+            <a class="btn btn-outline-dark" asp-action="ShowContacts" asp-controller="Contact">← Back</a>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form asp-action="AddContact" method="post">
+                    <div class="mb-3">
+                        <label asp-for="FirstName" class="form-label">First Name</label>
+                        <input asp-for="FirstName" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="LastName" class="form-label">Last Name</label>
+                        <input asp-for="LastName" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="CompanyName" class="form-label">Company Name</label>
+                        <input asp-for="CompanyName" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="EmailId" class="form-label">Email</label>
+                        <input asp-for="EmailId" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="MobileNo" class="form-label">Mobile No</label>
+                        <input asp-for="MobileNo" class="form-control" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="Designation" class="form-label">Designation</label>
+                        <select asp-for="Designation" asp-items="ViewBag.DesignationList" class="form-select">
+                            <option value="">-- Select --</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Contact</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

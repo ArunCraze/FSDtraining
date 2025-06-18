@@ -1,0 +1,41 @@
+﻿@model MVCContactDirectory.Model.ContactInfo
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Contact Details</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-white">
+    <div class="container py-5">
+        <div class="card border-primary shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Contact Details</h4>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-3">ID</dt>
+                    <dd class="col-sm-9">@Model.ContactId</dd>
+
+                    <dt class="col-sm-3">Name</dt>
+                    <dd class="col-sm-9">@Model.FirstName @Model.LastName</dd>
+
+                    <dt class="col-sm-3">Company</dt>
+                    <dd class="col-sm-9">@Model.CompanyName</dd>
+
+                    <dt class="col-sm-3">Email</dt>
+                    <dd class="col-sm-9">@Model.EmailId</dd>
+
+                    <dt class="col-sm-3">Mobile No</dt>
+                    <dd class="col-sm-9">@Model.MobileNo</dd>
+
+                    <dt class="col-sm-3">Designation</dt>
+                    <dd class="col-sm-9">@Model.Designation</dd>
+                </dl>
+                <a href="@Url.Action("ShowContacts", "Contact")" class="btn btn-outline-secondary mt-3">← Back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

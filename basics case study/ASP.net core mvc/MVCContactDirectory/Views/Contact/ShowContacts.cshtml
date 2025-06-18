@@ -1,0 +1,35 @@
+﻿@model List<MVCContactDirectory.Model.ContactInfo>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html>
+<head>
+    <title>Contacts</title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-dark">All Contacts</h2>
+            <a class="btn btn-success" asp-action="AddContact" asp-controller="Contact">+ Add Contact</a>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            @foreach (var contact in Model)
+            {
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@contact.FirstName @contact.LastName</h5>
+                            <p class="card-text mb-1"><strong>Company:</strong> @contact.CompanyName</p>
+                            <p class="card-text mb-1"><strong>Email:</strong> @contact.EmailId</p>
+                            <p class="card-text mb-1"><strong>Mobile:</strong> @contact.MobileNo</p>
+                            <p class="card-text"><strong>Designation:</strong> @contact.Designation</p>
+                            <a class="btn btn-outline-primary btn-sm" asp-action="GetContactById" asp-controller="Contact" asp-route-id="@contact.ContactId">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
