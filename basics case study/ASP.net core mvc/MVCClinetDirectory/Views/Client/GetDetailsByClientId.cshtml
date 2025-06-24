@@ -1,0 +1,33 @@
+﻿@model MVCClientDirectory.Models.ClientInfo
+
+@{
+    ViewData["Title"] = "Client Details";
+}
+
+<div class="container mt-5">
+    <h3 class="text-center text-primary mb-4">Client Details</h3>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Client ID</dt>
+                <dd class="col-sm-9">@Model.ClientId</dd>
+
+                <dt class="col-sm-3">Company Name</dt>
+                <dd class="col-sm-9">@Model.CompanyName</dd>
+
+                <dt class="col-sm-3">Web URL</dt>
+                <dd class="col-sm-9"><a href="@Model.WebURL" target="_blank">@Model.WebURL</a></dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Category</dt>
+                <dd class="col-sm-9">@Model.Category.Replace("_", " ")</dd>
+
+                <dt class="col-sm-3">Standard</dt>
+                <dd class="col-sm-9">@Model.Standard</dd>
+            </dl>
+            <a asp-action="ShowAllClientsDetails" class="btn btn-outline-secondary">← Back to List</a>
+        </div>
+    </div>
+</div>
